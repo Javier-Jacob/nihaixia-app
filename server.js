@@ -262,7 +262,15 @@ async function handleChat(req, res) {
     if (!upstream.ok) {
       let msg = '';
       try { msg = (await upstream.text()).slice(0, 500); } catch {}
-      send({ error: `上游返回 ${upstream.status}`, detail: msg });
+      const hint = upstream.status === 401 ? 'API Key 无效或已过期，请在设置里重新填写'
+        : upstream.status === 402 ? '账户余额不足，请到服务商后台充值，或在设置里切换到免费服务商（如智谱 glm-4-flash）'
+        : upstream.status === 403 ? '该 Key 没有此模型的调用权限，请到服务商后台开通'
+        : upstream.status === 404 ? '接口地址或模型名不正确，请检查设置里的服务商、Base URL 与模型'
+        : upstream.status === 429 ? '请求太频繁或额度已用尽，请稍后再试或换服务商'
+        : '';
+      let detail = msg;
+      try { const j = JSON.parse(msg); detail = j.error?.message || j.message || msg; } catch {}
+      send({ error: `上游返回 ${upstream.status}${hint ? '：' + hint : ''}`, detail: String(detail).slice(0, 200) });
       res.end(); return;
     }
     const reader = upstream.body.getReader();
