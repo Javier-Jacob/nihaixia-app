@@ -1,0 +1,11 @@
+{
+  "name": "nihaixia-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "倪海厦经方中医 mobile web app (FunctionWeb)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "build:data": "node tools/build-data.js"
+  }
+}

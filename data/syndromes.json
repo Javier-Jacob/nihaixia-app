@@ -1,0 +1,267 @@
+{
+  "groups": [
+    {
+      "name": "寒热",
+      "symptoms": [
+        { "id": "ehan", "label": "怕冷 / 恶寒" },
+        { "id": "fere", "label": "发热" },
+        { "id": "wlh", "label": "忽冷忽热（往来寒热）" },
+        { "id": "ere", "label": "怕热 / 不恶寒反恶热" },
+        { "id": "lrex", "label": "上热下寒 / 寒热错杂" },
+        { "id": "sjln", "label": "手足冰冷" }
+      ]
+    },
+    {
+      "name": "汗",
+      "symptoms": [
+        { "id": "youhan", "label": "有汗" },
+        { "id": "wuhan", "label": "无汗" }
+      ]
+    },
+    {
+      "name": "头身",
+      "symptoms": [
+        { "id": "hxqt", "label": "头项强痛 / 后颈紧" },
+        { "id": "st", "label": "身痛 / 关节痛" },
+        { "id": "tou", "label": "头痛" },
+        { "id": "my", "label": "头晕 / 目眩" }
+      ]
+    },
+    {
+      "name": "胸腹",
+      "symptoms": [
+        { "id": "xlkm", "label": "胸胁胀满" },
+        { "id": "fm", "label": "腹满" },
+        { "id": "fqt", "label": "腹痛拒按" },
+        { "id": "fxa", "label": "腹痛喜按" },
+        { "id": "qszx", "label": "气上撞心" },
+        { "id": "xzx", "label": "心下痞硬" }
+      ]
+    },
+    {
+      "name": "口咽",
+      "symptoms": [
+        { "id": "kk", "label": "口苦" },
+        { "id": "yg", "label": "咽干" },
+        { "id": "kd", "label": "口渴喜饮" },
+        { "id": "bk", "label": "不口渴" },
+        { "id": "xiaoke", "label": "消渴（多饮多尿）" },
+        { "id": "kzr", "label": "胃脘灼热 / 心中疼热" }
+      ]
+    },
+    {
+      "name": "饮食二便",
+      "symptoms": [
+        { "id": "sxb", "label": "吃不下" },
+        { "id": "jby", "label": "知饥但不想吃" },
+        { "id": "tun", "label": "呕吐" },
+        { "id": "ex", "label": "恶心" },
+        { "id": "bm", "label": "便秘" },
+        { "id": "xl", "label": "大便溏 / 下利" },
+        { "id": "xlqg", "label": "下利清谷（完谷不化）" },
+        { "id": "nbb", "label": "小便清长色白" },
+        { "id": "nbh", "label": "小便黄" }
+      ]
+    },
+    {
+      "name": "精神",
+      "symptoms": [
+        { "id": "dyz", "label": "精神萎靡 / 但欲寐" },
+        { "id": "xfmy", "label": "心烦睡不着" },
+        { "id": "zy", "label": "谵语 / 神志不清" }
+      ]
+    },
+    {
+      "name": "脉舌",
+      "symptoms": [
+        { "id": "maifu", "label": "脉浮" },
+        { "id": "maifuhuan", "label": "脉浮缓" },
+        { "id": "maifujin", "label": "脉浮紧" },
+        { "id": "maihd", "label": "脉洪大" },
+        { "id": "maixian", "label": "脉弦" },
+        { "id": "maiwx", "label": "脉微细" },
+        { "id": "maixs", "label": "脉细数" },
+        { "id": "shebai", "label": "舌苔白厚 / 津液多" },
+        { "id": "shehuang", "label": "舌苔黄燥" },
+        { "id": "shehong", "label": "舌红少苔" }
+      ]
+    },
+    {
+      "name": "其他",
+      "symptoms": [
+        { "id": "ks", "label": "咳嗽" },
+        { "id": "chuan", "label": "喘" },
+        { "id": "sz", "label": "水肿" }
+      ]
+    }
+  ],
+  "syndromes": [
+    {
+      "id": "taiyang",
+      "name": "太阳病",
+      "short": "表证",
+      "tig": "太阳之为病，脉浮，头项强痛而恶寒。",
+      "pathogenesis": "风寒束表，营卫失调。太阳为第一道防线。",
+      "must": ["ehan", "maifu"],
+      "key": ["hxqt", "fere"],
+      "support": ["youhan", "wuhan", "st", "ks", "maifuhuan", "maifujin"],
+      "points": [
+        "有汗 vs 无汗是太阳病第一鉴别点：有汗用桂枝汤，无汗用麻黄汤",
+        "脉浮紧＝身体素实，脉浮缓＝身体素虚",
+        "有表证时不可攻里，先解表再攻里",
+        "酒客不可用桂枝汤"
+      ],
+      "subtypes": [
+        { "when": ["youhan"], "name": "太阳中风", "formula": "桂枝汤", "hint": "发热、汗出、恶风，脉浮缓 → 解肌" },
+        { "when": ["wuhan"], "name": "太阳伤寒", "formula": "麻黄汤", "hint": "发热、无汗、恶寒、体痛，脉浮紧 → 发汗" },
+        { "when": ["hxqt", "kd"], "name": "太阳项背强", "formula": "葛根汤", "hint": "后项强痛、喉咙痛、口渴 → 葛根汤；有汗改用桂枝加葛根汤" }
+      ],
+      "formulas": ["桂枝汤", "麻黄汤", "葛根汤", "桂枝加葛根汤", "大青龙汤", "小青龙汤"],
+      "diff": "太阳 vs 少阴：太阳脉浮、手足温；少阴脉沉微、手足冷、但欲寐。"
+    },
+    {
+      "id": "yangming",
+      "name": "阳明病",
+      "short": "里热",
+      "tig": "阳明之为病，胃家实是也。",
+      "pathogenesis": "里热炽盛，燥实内结。阳明无寒证，全是热证。",
+      "must": ["ere", "bm"],
+      "key": ["kd", "fm", "maihd", "shehuang"],
+      "support": ["zy", "fqt", "nbh", "fere"],
+      "points": [
+        "舌苔黄燥、大渴饮冷、中脘痛拒按 → 阳明",
+        "经热（大汗大渴脉洪大）用白虎汤；腑热（腹满便秘谵语）用承气汤",
+        "阳明居中土，万物所归，无所复传——病到阳明就停住"
+      ],
+      "subtypes": [
+        { "when": ["kd", "maihd"], "name": "阳明经热", "formula": "白虎汤", "hint": "大热、大汗、大渴、脉洪大" },
+        { "when": ["fqt", "zy"], "name": "阳明腑实重证", "formula": "大承气汤", "hint": "腹满痛拒按、便秘、谵语、潮热" }
+      ],
+      "formulas": ["白虎汤", "大承气汤", "小承气汤", "调胃承气汤"],
+      "diff": "阳明 vs 太阴：阳明恶热、大渴、便秘、腹痛拒按；太阴恶寒、不渴、便溏、腹痛喜按。"
+    },
+    {
+      "id": "shaoyang",
+      "name": "少阳病",
+      "short": "半表半里",
+      "tig": "少阳之为病，口苦，咽干，目眩也。",
+      "pathogenesis": "邪在半表半里，枢机不利。胆火上炎，三焦不畅。",
+      "must": ["kk", "wlh", "xlkm"],
+      "key": ["yg", "my", "ex", "tun"],
+      "support": ["maixian", "bk", "tou"],
+      "points": [
+        "但见一证便是，不必悉具——口苦、咽干、目眩、往来寒热、胸胁苦满、呕，见一个就可用",
+        "少阳三禁：不可汗、不可下、不可吐，只能和解",
+        "脉弦是少阳特征脉；有呕就想到少阳"
+      ],
+      "subtypes": [
+        { "when": ["wlh", "kk"], "name": "少阳本病", "formula": "小柴胡汤", "hint": "往来寒热、口苦、胸胁苦满、恶心" },
+        { "when": ["bm", "xlkm"], "name": "少阳阳明合病", "formula": "大柴胡汤", "hint": "往来寒热口苦 + 便秘、胸胁满痛" },
+        { "when": ["fere", "xlkm"], "name": "太阳少阳合病", "formula": "柴胡桂枝汤", "hint": "发热汗出恶风 + 口苦胁痛，脉浮弦" }
+      ],
+      "formulas": ["小柴胡汤", "大柴胡汤", "柴胡桂枝汤"],
+      "diff": "少阳 vs 太阳：少阳有口苦、往来寒热、胸胁苦满；太阳以恶寒、脉浮、头项强痛为主。"
+    },
+    {
+      "id": "taiyin",
+      "name": "太阴病",
+      "short": "脾寒湿",
+      "tig": "太阴之为病，腹满而吐，食不下，自利益甚，时腹自痛。",
+      "pathogenesis": "脾阳不足，寒湿内盛。太阴为阴之始。",
+      "must": ["fm", "xl", "bk"],
+      "key": ["tun", "sxb", "fxa", "shebai"],
+      "support": ["my", "sz"],
+      "points": [
+        "下利是溏的、湿的，不是水泻；不口渴＝湿在中焦",
+        "腹诊：拒按为实，喜按为虚",
+        "手足自温＝胃气外散到四肢",
+        "欲解时：亥至丑时（半夜胃气复）"
+      ],
+      "subtypes": [
+        { "when": ["fm", "xl"], "name": "太阴脾寒", "formula": "理中汤", "hint": "腹满、便溏、呕吐、食不下、不渴" },
+        { "when": ["fxa"], "name": "虚劳里急", "formula": "小建中汤", "hint": "腹中痛喜按、瘦人虚劳、手足烦热（假热）" },
+        { "when": ["my"], "name": "水停中焦", "formula": "苓桂术甘汤", "hint": "心动悸、目眩、头昏，水堵在胃里" }
+      ],
+      "formulas": ["理中汤", "小建中汤", "苓桂术甘汤"],
+      "diff": "太阴 vs 少阴：太阴手足自温、不渴；少阴手足逆冷、渴而引水自救、但欲寐。"
+    },
+    {
+      "id": "shaoyin_cold",
+      "name": "少阴寒化证",
+      "short": "心肾阳虚",
+      "tig": "少阴之为病，脉微细，但欲寐也。",
+      "pathogenesis": "心肾阳气衰微，阴寒内盛。少阴为阴之中。",
+      "must": ["maiwx", "dyz", "sjln"],
+      "key": ["xlqg", "nbb", "ehan"],
+      "support": ["kd", "sz", "chuan"],
+      "points": [
+        "微脉＝气衰弱，细脉＝血不够；但欲寐是主证",
+        "少阴病完全又阴又寒，绝对不可发汗（发汗亡阳），不可攻下",
+        "自利而渴、小便色白＝下焦虚寒，不能气化",
+        "欲解时：子至寅上"
+      ],
+      "subtypes": [
+        { "when": ["sjln", "maiwx"], "name": "少阴阳衰", "formula": "四逆汤", "hint": "四肢厥逆、下利清谷、脉微欲绝" },
+        { "when": ["sz", "nbb"], "name": "少阴水气", "formula": "真武汤", "hint": "腹痛、小便不利、四肢沉重、水肿" },
+        { "when": ["ehan", "fere"], "name": "太阳少阴两感", "formula": "麻黄附子细辛汤", "hint": "发热恶寒 + 脉沉微、但欲寐" }
+      ],
+      "formulas": ["四逆汤", "真武汤", "麻黄附子细辛汤", "炙甘草汤"],
+      "diff": "少阴寒化 vs 少阴热化：寒化舌淡苔白、脉微细、但欲寐；热化舌红少苔、脉细数、心烦不得眠。"
+    },
+    {
+      "id": "shaoyin_heat",
+      "name": "少阴热化证",
+      "short": "阴虚火旺",
+      "tig": "少阴病，得之二三日以上，心中烦，不得卧，黄连阿胶汤主之。",
+      "pathogenesis": "肾阴不足，心火独亢，心肾不交。",
+      "must": ["xfmy", "maixs"],
+      "key": ["shehong", "yg"],
+      "support": ["nbh", "bm"],
+      "points": [
+        "脉细数 + 心烦不得卧 + 舌红少苔",
+        "与寒化鉴别：寒化但欲寐、手足厥冷；热化心烦不得眠、四肢温",
+        "阿胶、鸡子黄后下"
+      ],
+      "subtypes": [],
+      "formulas": ["黄连阿胶汤"],
+      "diff": "少阴热化 vs 少阳：少阳有口苦、往来寒热；少阴热化以心烦失眠、舌红少苔为主。"
+    },
+    {
+      "id": "jueyin",
+      "name": "厥阴病",
+      "short": "寒热错杂",
+      "tig": "厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。",
+      "pathogenesis": "阴阳逆乱，上热下寒。厥阴为阴之尽，人体最后一道关卡。",
+      "must": ["lrex", "qszx"],
+      "key": ["xiaoke", "kzr", "jby", "sjln"],
+      "support": ["xl", "tun"],
+      "points": [
+        "寒热并见是厥阴最典型特征：上热（消渴、心中疼热）+ 中寒（饥不欲食）+ 下寒（下利）",
+        "乌梅丸是治肝第一方、久利神方；下利便浓血（白头翁汤证）忌用",
+        "厥热胜复：厥多热少病进，热多厥少病退",
+        "欲解时：丑至卯上"
+      ],
+      "subtypes": [
+        { "when": ["kzr", "jby"], "name": "厥阴寒热错杂", "formula": "乌梅丸", "hint": "消渴、气上撞心、饥不欲食、下利" },
+        { "when": ["sjln"], "name": "厥阴血虚寒厥", "formula": "当归四逆汤", "hint": "手足厥寒、脉细欲绝、冻疮" },
+        { "when": ["tun", "tou"], "name": "厥阴肝寒", "formula": "吴茱萸汤", "hint": "干呕、吐涎沫、头痛" }
+      ],
+      "formulas": ["乌梅丸", "当归四逆汤", "吴茱萸汤", "白头翁汤"],
+      "diff": "厥阴 vs 少阴：厥阴寒热错杂、上热下寒；少阴以一派虚寒为主。"
+    }
+  ],
+  "combined": [
+    { "pair": ["taiyang", "shaoyang"], "name": "太阳少阳合病", "formula": "柴胡桂枝汤", "hint": "发热汗出恶风 + 口苦胁痛，脉浮弦" },
+    { "pair": ["taiyang", "yangming"], "name": "太阳阳明合病", "formula": "大青龙汤", "hint": "无汗恶寒身痛 + 口渴便秘；表轻里热重可用葛根黄芩黄连汤" },
+    { "pair": ["shaoyang", "yangming"], "name": "少阳阳明合病", "formula": "大柴胡汤", "hint": "寒热往来口苦 + 高热便秘，脉弦数有力" },
+    { "pair": ["taiyin", "shaoyin_cold"], "name": "太阴少阴并病", "formula": "四逆汤", "hint": "腹满便溏 + 脉微细厥冷，宜温里（附子理中汤类）" },
+    { "pair": ["shaoyin_cold", "jueyin"], "name": "少阴厥阴并病", "formula": "乌梅丸", "hint": "脉微细厥冷 + 寒热错杂，标本同治" }
+  ],
+  "redFlags": [
+    "高热持续不退、意识改变、抽搐",
+    "胸痛彻背、大汗淋漓、呼吸困难",
+    "突然偏瘫、口眼歪斜、言语不清",
+    "大量出血、持续剧烈腹痛、脱水",
+    "婴幼儿、孕妇、高龄或基础病重者症状加重"
+  ]
+}

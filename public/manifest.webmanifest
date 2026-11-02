@@ -1,0 +1,17 @@
+{
+  "name": "倪海厦 · 经方中医",
+  "short_name": "倪海厦",
+  "description": "六经辨证、经方剂量、1257 例医案、伤寒金匮本草针灸速查",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4efe5",
+  "theme_color": "#f4efe5",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
